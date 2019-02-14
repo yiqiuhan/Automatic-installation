@@ -1,6 +1,7 @@
 import os
 from winreg import *
 
+
 class versioncampare:
  def webversion (self,path):
   #path = "//panda/BRE_MASTERS_MFG/INV/R24-Senna/px64"
@@ -20,29 +21,32 @@ class versioncampare:
     #b = (qalist[0])
 
   c = b[4:7]
-  web = int(c) 
+  global web 
+  web = int(c)
   print (web)
   print(type(web))
 
  def localversion (self,path):
   registryKey = OpenKey(HKEY_CURRENT_USER, path)
-  c = (EnumValue(registryKey,0))
-  local = c[1]
-  
+  a = (EnumValue(registryKey,0))
+  b = str(a[1])
+  c = int(b[3:6])
+  global local 
+  local = c
   print(local)
   print(type(local))
 
- def campare(self, web, local):
-  if web < local:
-    print ('ccc')
+ def campare(self, ww, ll):
+  if ww < ll:
+    print ('you have already installed latest version ', local)
   else:
-    print ('ddd')
+    print ('the web version is',web, 'which is higher than your local version')
   
    
 c = versioncampare() 
 c.webversion("//panda/BRE_MASTERS_MFG/INV/R24-Senna/px64")
 c.localversion(r'Software\Autodesk\Inventor\RegistryVersion24.0\System')
-c.campare
+c.campare(web,local)
 
  
 
