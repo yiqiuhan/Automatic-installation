@@ -78,9 +78,11 @@ class versioncampare:
          #f.close()
 
          #p = Popen("uninstall.bat", cwd=r"C:/Users")
-         stdout, stderr = p.communicate()
+         #stdout, stderr = p.communicate()
    
-c = versioncampare() 
-c.webversion("//panda/BRE_MASTERS_MFG/INV/R24-Senna/px64")
-c.localversion(r'Software\Autodesk\Inventor\RegistryVersion24.0\System')
-c.campare(web,local)
+c = versioncampare()
+while True:
+    c.webversion("//panda/BRE_MASTERS_MFG/INV/R24-Senna/px64")
+    c.localversion(r'Software\Autodesk\Inventor\RegistryVersion24.0\System')
+    c.campare(web,local)
+    time.sleep(7200)
