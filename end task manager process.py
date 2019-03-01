@@ -1,7 +1,12 @@
 
 import os
+os.system('taskkill /f /im %s' % 'acad.exe')
+os.system('taskkill /f /im %s' % 'dwgviewr.exe')
 os.system('taskkill /f /im %s' % 'InvRO.exe')
 os.system('taskkill /f /im %s' % 'acad.exe')
+os.system('taskkill /f /im %s' % 'AddInMgr.exe')
+os.system('taskkill /f /im %s' % 'DtDv.exe')
+os.system('taskkill /f /im %s' % 'AddInMgr.exe')
 
 #import psutil, os
 #pids = psutil.pids()
