@@ -1,6 +1,6 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-import sys
+import sys,time
 
 
 class Ui_MainWindow(object):
@@ -34,9 +34,19 @@ class Ui_MainWindow(object):
         self.pushButton.setGeometry(QtCore.QRect(430, 280, 121, 51))
         self.pushButton.setObjectName("pushButton")
         self.pushButton.clicked.connect(self.clickBox)
+        self.pushButton.clicked.connect(self.aaa)
+        
         self.lcdNumber = QtWidgets.QLCDNumber(self.centralwidget)
         self.lcdNumber.setGeometry(QtCore.QRect(370, 180, 181, 71))
         self.lcdNumber.setObjectName("lcdNumber")
+        self.lcdNumber.display(time.strftime("%X",time.localtime()))
+        
+        self.timer = QtCore.QTimer()    
+        self.timer.setInterval(1000)       
+        self.timer.start()
+      
+        #timer.timeout.connect(self.animate)
+        
         self.label_2 = QtWidgets.QLabel(self.centralwidget)
         self.label_2.setGeometry(QtCore.QRect(380, 150, 171, 20))
         font = QtGui.QFont()
@@ -71,8 +81,7 @@ class Ui_MainWindow(object):
         print(a)
         b = self.comboBox_2.currentText()
         print(b)
-        c = self.checkBox.currentValue
-        print(c)
+        
     def clickBox(self, state):
         if state == QtCore.Qt.Checked:
             print('Checked')
