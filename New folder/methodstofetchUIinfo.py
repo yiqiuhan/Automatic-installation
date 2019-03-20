@@ -83,12 +83,12 @@ class Ui_MainWindow(object):
         self.comboBox_2.addItem("")
         self.comboBox_2.addItem("")
         self.comboBox_2.addItem("")
-        self.checkBox = QtWidgets.QCheckBox(self.centralwidget)
-        self.checkBox.setGeometry(QtCore.QRect(260, 340, 71, 16))
-        font = QtGui.QFont()
-        font.setPointSize(8)
-        self.checkBox.setFont(font)
-        self.checkBox.setObjectName("checkBox")
+        #self.checkBox = QtWidgets.QCheckBox(self.centralwidget)
+        #self.checkBox.setGeometry(QtCore.QRect(260, 340, 71, 16))
+        #font = QtGui.QFont()
+        #font.setPointSize(8)
+        #self.checkBox.setFont(font)
+        #self.checkBox.setObjectName("checkBox")
         self.textBrowser_2 = QtWidgets.QTextBrowser(self.centralwidget)
         self.textBrowser_2.setGeometry(QtCore.QRect(10, 10, 581, 41))
         self.textBrowser_2.setObjectName("textBrowser_2")
@@ -122,7 +122,7 @@ class Ui_MainWindow(object):
     def timing(self):
         print('cc')        
         self.timer.timeout.connect(self.launchcampare)
-        self.timer.start(sec)#计时器每秒计数
+        self.timer.start(sec)#count every seconds
 
     def stoptiming(self):
         self.timing.stop()
@@ -184,7 +184,7 @@ class Ui_MainWindow(object):
         self.comboBox_2.setItemText(0, _translate("MainWindow", "QA"))
         #self.comboBox_2.setItemText(1, _translate("MainWindow", "Dev"))
         #self.comboBox_2.setItemText(2, _translate("MainWindow", "Branch (Altrap)"))
-        self.checkBox.setText(_translate("MainWindow", "6xx builds"))
+        #self.checkBox.setText(_translate("MainWindow", "6xx builds"))
 
 class MyWindow(QtWidgets.QMainWindow):
     def closeEvent(self,event):
